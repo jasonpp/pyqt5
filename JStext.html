@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+    </script>
+
+    <script>
+        var express = require('express')
+
+        function goFoward() {
+            txt = "<p>Browser CodeName: " + navigator.appCodeName + "</p>";
+            txt+= "<p>Browser Name: " + navigator.appName + "</p>";
+            txt+= "<p>Browser Version: " + navigator.appVersion + "</p>";
+            txt+= "<p>Cookies Enabled: " + navigator.cookieEnabled + "</p>";
+            txt+= "<p>Platform: " + navigator.platform + "</p>";
+            txt+= "<p>User-agent header: " + navigator.userAgent + "</p>";
+            txt+= "<p>User-agent language: " + navigator.systemLanguage + "</p>";
+            document.getElementById("example").innerHTML=txt;
+
+            $('#h01').html("Already go forward")
+        }
+
+        function goBack() {
+            txt = "<p>Browser CodeName: " + navigator.appCodeName + "</p>";
+            txt+= "<p>Browser Name: " + navigator.appName + "</p>";
+            txt+= "<p>Browser Version: " + navigator.appVersion + "</p>";
+            txt+= "<p>Cookies Enabled: " + navigator.cookieEnabled + "</p>";
+            txt+= "<p>Platform: " + navigator.platform + "</p>";
+            txt+= "<p>User-agent header: " + navigator.userAgent + "</p>";
+            txt+= "<p>User-agent language: " + navigator.systemLanguage + "</p>";
+            document.getElementById("example").innerHTML=txt;
+
+            $('#h02').html("Already go backed")
+
+            $(document).write("直接写入")
+        }
+        
+        function myfunction() {
+            $("#h01").html("world01")
+        }
+        $(document).ready(myfunction)
+    </script>
+    <script>
+        var a = prompt("Warning","错误")
+        alert(a)
+    </script>
+</head>
+<body>
+    <input type="button" value="Foward" onclick="goFoward()">
+    <input type="button" value="Back" onclick="goBack()">
+    <p id="example">"Time"</p>
+    <h1 id="h01">world</h1>
+    <h1 id="h02">world02</h1>
+</body>
+</html>
