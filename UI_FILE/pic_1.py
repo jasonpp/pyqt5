@@ -132,8 +132,6 @@ class Ui_MainWindow(object):
         print(now() - start)
 
 
-
-
     async def main(self):
         task1 = asyncio.create_task(self.fetch1())
         task2 = asyncio.create_task(self.fetch2())
