@@ -95,16 +95,6 @@ class Ui_MainWindow(object):
         self.label_4.setText(_translate("MainWindow", "电影100强"))
         self.label_2.setText(_translate("MainWindow", "最新电影"))
 
-    # def listAllItems(self):
-    #
-    #     self.fetch1()
-    #     #################################
-    #
-    #     self.fetch2()
-    #
-    #     #################################
-    #
-    #     self.fetch3()
 
 
 
