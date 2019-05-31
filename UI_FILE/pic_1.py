@@ -111,54 +111,48 @@ class Ui_MainWindow(object):
     async def fetch1(self):
         start = now()
         # 1. Initial list string model
-        # slm1 = QStringListModel()
+        slm1 = QStringListModel()
         # 2. Setup the list
-        await time.sleep(4)
-        # slm1.setStringList(resultList_1)
+        resultList_1 = search_1()
+        slm1.setStringList(resultList_1)
         # 3. Fill data with list data
-        # self.listView.setModel(slm1)
+        self.listView.setModel(slm1)
         print(now()-start)
 
     async def fetch2(self):
         start = now()
         # 1. Initial list string model
-        # slm1 = QStringListModel()
+        slm2 = QStringListModel()
         # 2. Setup the list
-        await time.sleep(3)
-        # slm1.setStringList(resultList_1)
+        resultList_2 = search_2()
+        slm2.setStringList(resultList_2)
         # 3. Fill data with list data
-        # self.listView.setModel(slm1)
+        self.listView_2.setModel(slm2)
         print(now() - start)
 
     async def fetch3(self):
         start = now()
-        # 1. Initial list string model
-        # slm1 = QStringListModel()
-        # 2. Setup the list
-        await time.sleep(2)
-        # slm1.setStringList(resultList_1)
-        # 3. Fill data with list data
-        # self.listView.setModel(slm1)
+        #1. Initial list string model
+        slm3 = QStringListModel()
+        #2. Setup the list
+        resultList_3 = search_3()
+        slm3.setStringList(resultList_3)
+        #3. Fill data with list data
+        self.listView_3.setModel(slm3)
         print(now() - start)
 
 
 
-        # coroutine1 = self.fetch1()
-        # coroutine2 = self.fetch2()
-        # coroutine3 = self.fetch3()
-        # tasks = [
-        #     asyncio.ensure_future(coroutine1),
-        #     asyncio.ensure_future(coroutine2),
-        #     asyncio.ensure_future(coroutine3)
-        # ]
-        # dones, pending = await asyncio.wait(tasks)
 
     async def main(self):
-        await asyncio.gather(
-            self.fetch1(),
-            self.fetch2(),
-            self.fetch3()
-        )
+        task1 = asyncio.create_task(self.fetch1())
+        task2 = asyncio.create_task(self.fetch2())
+        task3 = asyncio.create_task(self.fetch3())
+
+        await task1
+        await task2
+        await task3
+
     def runIt(self):
         start = now()
         asyncio.run(self.main())
