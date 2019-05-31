@@ -5,6 +5,7 @@
 # Created by: PyQt5 UI code generator 5.11.3
 #
 # WARNING! All changes made in this file will be lost!
+# These code was just for testing coroutine , but finally failed,cuz of the UI thread can not run in different thread or process.
 import sys
 import concurrent.futures
 import asyncio
